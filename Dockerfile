@@ -8,7 +8,7 @@ ENV USER root
 RUN apt-get update && \
     apt-get --quiet --yes install \
         build-essential ca-certificates curl wget git libssl-dev \
-        software-properties-common gcc-multilib python2.7-dev \
+        software-properties-common gcc-multilib python2.7-dev bc \
         python-pip python-virtualenv check linux-headers-generic && \
         apt-get autoremove -y && \
         apt-get clean && \
