@@ -9,7 +9,8 @@ RUN apt-get update && \
     apt-get --quiet --yes install \
         build-essential pkg-config ca-certificates curl wget git libssl-dev \
         software-properties-common gcc-multilib python2.7-dev bc \
-        python-pip python-virtualenv check linux-headers-generic && \
+        python-pip python-virtualenv check linux-headers-generic \
+        apt-transport-https && \
         apt-get autoremove -y && \
         apt-get clean && \
         rm -rf /var/lib/apt/lists* /tmp/* /var/tmp/*
