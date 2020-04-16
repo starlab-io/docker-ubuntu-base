@@ -1,4 +1,4 @@
-FROM ubuntu:19.04
+FROM ubuntu:19.10
 MAINTAINER Doug Goldstein <doug.goldstein@starlab.io>
 
 ENV DEBIAN_FRONTEND=noninteractive
