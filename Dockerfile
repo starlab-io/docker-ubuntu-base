@@ -1,5 +1,5 @@
-FROM ubuntu:19.10
-MAINTAINER Doug Goldstein <doug.goldstein@starlab.io>
+FROM ubuntu:20.04
+MAINTAINER Starlab <support@starlab.io>
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV USER root
@@ -19,13 +19,14 @@ RUN apt-get update && \
         linux-headers-generic \
         pkg-config \
         python2.7-dev \
-        python-pip \
-        python-virtualenv \
+        python3-pip \
+        python3-virtualenv \
         software-properties-common \
         wget \
-    &&  apt-get autoremove -y && \
-        apt-get clean && \
-        rm -rf /var/lib/apt/lists* /tmp/* /var/tmp/*
+    &&  \
+    apt-get autoremove -y && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists* /tmp/* /var/tmp/*
 
 # Add the proxy cert (needs to come after ca-certificates installation)
 ADD proxy.crt /usr/local/share/ca-certificates/proxy.crt
